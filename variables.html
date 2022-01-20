@@ -15,13 +15,13 @@
     </header>
     <main>
         <label for="fullname">Full Name</label><input type="text" name="fullname">
-        <label for="Vehicle Make">Vehicle Make</label><input type="text" name="Vehicle Make">
-        <label for="Vehicle Model">Vehicle Model</label><input type="text" name="Vehicle Model">
-        <label for="Vehicle Year">Vehicle Year</label><input type="integer">
+        <label for="vehiclemake">Vehicle Make</label><input type="text" name="vehiclemake">
+        <label for="vehiclemodel">Vehicle Model</label><input type="text" name="vehiclemodel">
+        <label for="vehicleyear">Vehicle Year</label><input type="integer">
         <label for="discount">Discount</label><input type="integer" id="discount">
         <input type="button" onclick="getTotal()" value="Find Total Amount">
 
-        <p id="Total_Amount_Due"></p>
+        <p id="totaldmountdue"></p>
 
 
     </main>
@@ -36,9 +36,7 @@
             // processing
             total = total - discount;
             //output
-
-
-            document.querySelector("#Total_Amount_Due").textContent = `Total Amount Due: $${totalamount}`;
+            document.querySelector("#totalamountdue").textContent = `Total Amount Due: $${totalamount}`;
         }
 
     </script>
