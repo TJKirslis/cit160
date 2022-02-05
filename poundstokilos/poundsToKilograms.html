@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pounds To Kilos </title>
+    <link rel="stylesheet" href="lbs2kilos.css" />
+</head>
+
+<body>
+    <header>
+        <h1> Pounds to Kilograms</h1>
+        <h2>TJ Kirslis</h2>
+    </header>
+
+    <script>
+        function poundstokilos() {
+            //input
+            let pounds = parseFloat(document.getElementById('pounds').value);
+
+            //processing
+            let kilos = pounds / 2.2046;
+            let round = Math.round(kilos);
+            let float = round.toFixed(1);
+
+            //output
+            document.getElementById('output').innerHTML = `Kilos: ${float}`;
+
+        }
+    </script>
+
+    <main>
+        <div class="input">
+            <label for="pounds">Weight in Pounds</label>
+            <input type="number" id="pounds" placeholder="pounds">
+            <button onclick="poundstokilos()" id="button">Calculate</button>
+        </div>
+        <p id="output">...</p>
+    </main>
+
+    <footer>
+        &copy;<span id="copyright"></span> &bull; TJ Kirslis &bull; BYU-Idaho &bull; CIT 160
+    </footer>
+</body>
