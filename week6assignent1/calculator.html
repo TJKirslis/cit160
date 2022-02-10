@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+
+</head>
+
+<body>
+    <h1>TJ Kirslis</h1>
+    <h2>Calculator</h2>
+    <span id="num1"></span>
+    <select id="operand">
+        <option value="" selected disabled>--
+            Select An Operand--</option>\
+        <option value="+">+ Addition</option>
+        <option value="-">- Subtraction</option>
+    </select><span id="num2"></span> =
+    <input type="text" id="answer"><br>
+    <hr>
+    <button onclick="checkMath()">Check</button>
+    <hr>
+    <p id="message"></p>
+
+    <script>
+        const MAX = 21;
+        let num1 = Math.floor(Math.random() * MAX);
+        let num2 = Math.floor(Math.random() * MAX);
+        document.querySelector('#num1').textContent = ` ${num1} `;
+        document.querySelector('#num2').textContent = ` ${num2} `;
+        function checkMath() {
+            // input 
+            let operand = document.querySelector('#operand').value;
+            let userAnswer = parseInt(document.querySelector('#answer').value);
+
+            // processing 
+            let answerKey = 0;
+            let message = '';
+
+            // Determine answer
+            if (operand === "+") {
+                answerKey = num1 + num2;
+            } else {
+                answerKey = num1 - num2;
+            }
+            if (answerKey === userAnswer) {
+                message = `Correct! 🏆`
+            } else {
+                message = `Incorrect! 😢`
+            }
+            //OUTPUT
+            document.querySelector('#message').textContent = message;
+        }
+    </script>
+    <footer>
+        &copy;<span id="copyright"></span> &bull; TJ Kirslis &bull; BYU-Idaho &bull; CIT 160
+    </footer>
+</body>
+
+</html>
