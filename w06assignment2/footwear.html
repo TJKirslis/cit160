@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jordan Selector</title>
+</head>
+
+<body>
+    <h1>Weather Shoes Selector</h1>
+    <h2>TJ Kirslis</h2>
+    <hr>
+    <select id="weather">
+        <option value="" selected disabled>--Todays Weather--</option>
+        <option value="rainy">Rainy</option>
+        <option value="snow">Snow</option>
+        <option value="hot">Hot</option>
+        <option value="unknown">Unknown</option>
+    </select>
+    <button onclick="jselector()">Which Jordans to Wear?</button>
+    <hr>
+    <p id="output"></p>
+    <script>
+        function jselector() {
+            // INPUT let user select type of weather
+            let weather = document.querySelector('#weather').value;
+            // PROCESSING each type of weather has an option
+            switch (weather) {
+                case "rainy":
+                    message = `wolf gray w/red hightop fadeaways`;
+                    break;
+                case "snow":
+                    message = `cool grey 4s`;
+                    break;
+                case "hot":
+                    message = `lunar new year low top 6s`;
+                    break;
+                case "unknown":
+                    message = `ying yang 1s`;
+                    break;
+                default: message = "";
+            }
+            //OUTPUT 
+            document.querySelector('#output').textContent = message;
+        }
+    </script>
+    <footer>
+        &copy;<span id="copyright"></span> &bull; TJ Kirslis &bull; BYU-Idaho &bull; CIT 160
+    </footer>
+</body>
+
+</html>
