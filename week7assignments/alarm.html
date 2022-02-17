@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alarm Clock</title>
+</head>
+
+<body>
+    <header>
+        <h1>TJ Kirslis</h1>
+        <h2>Alarm Clock</h2>
+    </header>
+
+    <main>
+        <button onclick="alarm()">Check Alarm</button>
+        <span id="output"></span>
+    </main>
+
+    <script>
+        function alarm() {
+            const now = new Date();
+            let message = "";
+
+            // INPUT
+            const month = now.getMonth();
+            const date = now.getDate();
+            const day = now.getDay();
+
+            // PROCESSING
+            if (day === 5 || day === 6 || (month === 0 && date === 1) || (month === 3 && date === 4) || (month === 11 && date === 25)) {
+                message = "You can sleep in for a bit.";
+            } else {
+                message = "Get up now or you'll be late!";
+            }
+
+
+            // OUTPUT
+            document.querySelector('#output').textContent = message;
+        }
+    </script>
+
+    <footer>
+        &copy;<span id="copyright"></span> &bull; TJ Kirslis &bull; BYU-Idaho &bull; CIT 160
+    </footer>
+
+</body>
