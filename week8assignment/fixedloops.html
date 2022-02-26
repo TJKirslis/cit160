@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fixed Loops </title>
+
+</head>
+
+<body>
+    <h1>TJ Kirslis</h1>
+    <h2>Fixed Loops</h2>
+
+    <footer>
+        <div id="display1"></div>
+        <div id="display2"></div>
+        <div id="display3"></div>
+        <div id="display4"></div>
+    </footer>
+
+    <script>
+        
+        let output1 = '';
+        let i = 0;
+        while (i < 2) {
+            i++;
+            output1 += `Part 1:${i}<br>`;
+        }
+        document.getElementById('display1').innerHTML = output1;
+
+        
+        var output2 = '';
+        for (let j = 0; j < 3; j++) {
+            if (j !== 2) {
+                output2 += `Part 2:${j}, `;
+            }
+            else {
+                output2 += `Part 2:${j}`;
+            }
+        }
+        document.getElementById('display2').textContent = output2;
+
+        
+        let output3 = '';
+        for (let k = 0; k < 4; k++) {
+            output3 += k + " ";
+        }
+        document.getElementById('display3').textContent = output3;
+
+        
+        let balance = 1000;
+        const rate = .10;
+        let n = 30;
+        for (let s = 0; s < n; s++) {
+            interest = balance * rate;
+            balance += interest;
+        }
+        document.getElementById('display4').textContent = balance.toFixed(2);
+    </script>
+</body>
+
+</html>

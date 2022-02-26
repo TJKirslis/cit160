@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TJ Kirslis random list</title>
+</head>
+
+<body>
+    <div class="process"><button onclick="random()">Test</button>
+    </div>
+    <p id="demo"></p>
+    <Script>
+        function random(){
+        let text = "";
+        let r = Math.floor(Math.random() * 50) + 1;
+        for (let n = 1; n <= r; n++) {
+            text += "Item: " + n + "<br>";
+        }
+
+        document.getElementById("demo").innerHTML = text;
+    }
+    </Script>
+</body>
+
+</html>
